@@ -1,10 +1,11 @@
 import React from "react";
-import Navbar from "../components/Navbar";
 import SocialIcons from "../components/SocialIcons";
 import { motion } from "framer-motion";
-import img from "../assets/img.svg";
+import img from "../assets/image.svg";
+import loc from "../assets/loc.png";
 import { Element } from "react-scroll";
 import { Link, Events, animateScroll as scroll, scrollSpy } from "react-scroll";
+import "./HeroSection.scss";
 const HeroSection = () => {
   const textOne = [
     "Hii, I am",
@@ -19,30 +20,32 @@ const HeroSection = () => {
   ];
   return (
     <>
-      <Element name="HOME" className="element">
-        {/* <div className="z-50">
+      {/* <Element name="HOME" className="element"> */}
+      {/* <div className="z-50">
         <Navbar />
       </div> */}
 
-        {/* <div className="area grid grid-cols-4 bg-orange-100 mt-16 md:px-10 px-7 py-8 z-10"> */}
-        <div className="area grid grid-cols-4 bg-orange-100 mt-16 md:mt-0 md:px-10 px-7  z-10">
-          <div className="col-span-2 md:col-span-2 p-6 hidden md:flex flex-col ">
-            {/* <div className="justify-between md:flex flex-col h-[80%] z-50"> */}
-            <div className=" md:flex flex-col h-[80%] z-50 justify-between gap-3">
-              {textOne.map((el, i) => (
-                <motion.h5
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{
-                    duration: 1.25,
-                    delay: i / 2,
-                  }}
-                  className="text-[#000000] font-poppins font-semibold"
-                  key={i}
-                >
-                  {el}{" "}
-                </motion.h5>
-              ))}
+      {/* <div className="area grid grid-cols-4 bg-orange-100 mt-16 md:px-10 px-7 py-8 z-10"> */}
+
+      <div className="hero">
+        <div className="hero-section">
+          {/* <div className="justify-between md:flex flex-col h-[80%] z-50"> */}
+          <div className="hero-section-container">
+            {textOne.map((el, i) => (
+              <motion.h5
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{
+                  duration: 1.25,
+                  delay: i / 2,
+                }}
+                className="hero-section-container-heading"
+                key={i}
+              >
+                {el}{" "}
+              </motion.h5>
+            ))}
+            <div className="hero-section-container-subheading">
               {textTwo.map((el, i) => (
                 <motion.h1
                   initial={{ opacity: 0 }}
@@ -51,7 +54,7 @@ const HeroSection = () => {
                     duration: 1.25,
                     delay: (i + 1) / 2,
                   }}
-                  className="text-[#FF5C00] font-bold uppercase text-5xl"
+                  className="text-[#FF5C00]"
                   key={i}
                   whileHover={{ scale: 1.1 }}
                 >
@@ -66,13 +69,15 @@ const HeroSection = () => {
                     duration: 1.25,
                     delay: (i + 2) / 2,
                   }}
-                  className="text-[#000000]  font-bold uppercase text-5xl"
+                  className="text-[#000000]"
                   whileHover={{ scale: 1.1 }}
                   key={i}
                 >
                   {el}{" "}
                 </motion.h1>
               ))}
+            </div>
+            <div className="hero-section-container-content">
               {textFour.map((el, i) => (
                 <motion.h1
                   initial={{ opacity: 0 }}
@@ -81,56 +86,64 @@ const HeroSection = () => {
                     duration: 1.25,
                     delay: (i + 3) / 2,
                   }}
-                  className="text-base font-roboto md:mt-4"
+                  className=""
                   key={i}
                 >
                   {el}{" "}
                 </motion.h1>
               ))}
-              <div className="flex  gap-3">
-                <motion.button
-                  // initial={{ opacity: 0 }}
-                  // animate={{ opacity: 1 }}
-                  // transition={{
-                  //   duration: 1.25,
-                  //   delay: 2 / 2,
-                  // }}
-                  className="text-[#FF5C00] cursor-pointer font-semibold max-w-fit py-2 px-4 
-            font-poppins border border-[#FF5C00] rounded-sm z-[80]"
-                  whileHover={{ scale: 1.1 }}
-                >
-                  Download CV
-                </motion.button>
-                <motion.button
-                  // initial={{ opacity: 0 }}
-                  // animate={{ opacity: 1 }}
-                  // transition={{
-                  //   duration: 1.25,
-                  //   delay: 2 / 2,
-                  // }}
-                  className="text-white bg-[#FF5C00] cursor-pointer font-semibold max-w-fit py-2 px-4 
-            font-poppins border border-[#FF5C00] rounded-sm z-[80]"
-                  whileHover={{ scale: 1.1 }}
-                >
-                  <Link
-                    activeClass="active "
-                    //               className="md:ml-8 text-lg font-medium md:my-0 my-4 gap-6
-                    // text-[#050505] hover:text-gray-400 duration-500 font-poppins"
-                    to="CONTACT"
-                    spy={true}
-                    smooth={true}
-                    offset={50}
-                    duration={500}
-                    // onSetActive={handleSetActive}
-                  >
-                    {" "}
-                    Contact Me
-                  </Link>
-                </motion.button>
-              </div>
             </div>
-
-            <div className="my-8 z-30">
+            <div className="flex  gap-3 ">
+              <motion.button
+                // initial={{ opacity: 0 }}
+                // animate={{ opacity: 1 }}
+                // transition={{
+                //   duration: 1.25,
+                //   delay: 2 / 2,
+                // }}
+                className="text-white bg-[#FF5C00] cursor-pointer font-semibold max-w-fit py-2 px-4 
+            font-poppins border border-[#FF5C00] rounded-sm z-[80]"
+                whileHover={{ scale: 1.1 }}
+              >
+                {/* <Link
+                  activeClass="active "
+                  to="CONTACT"
+                  spy={true}
+                  smooth={true}
+                  offset={50}
+                  duration={500}
+                  // onSetActive={handleSetActive}
+                >
+                  {" "} */}
+                Download CV
+                {/* </Link> */}
+              </motion.button>
+              <motion.button
+                // initial={{ opacity: 0 }}
+                // animate={{ opacity: 1 }}
+                // transition={{
+                //   duration: 1.25,
+                //   delay: 2 / 2,
+                // }}
+                className="text-[#FF5C00] cursor-pointer font-semibold max-w-fit py-2 px-4 
+            font-poppins border border-[#FF5C00] rounded-sm z-[80]"
+                whileHover={{ scale: 1.1 }}
+              >
+                <Link
+                  activeClass="active "
+                  to="Contact"
+                  spy={true}
+                  smooth={true}
+                  offset={50}
+                  duration={500}
+                  // onSetActive={handleSetActive}
+                >
+                  {" "}
+                  Contact Me
+                </Link>
+              </motion.button>
+            </div>
+            <div className=" z-30">
               <motion.p
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -146,7 +159,7 @@ const HeroSection = () => {
             </div>
           </div>
 
-          <div className="col-span-4 md:col-span-2 flex justify-around items-center flex-col ">
+          <div className="col-span-4 md:col-span-2 flex justify-around items-center flex-col hero-section-location">
             {/* h-[65vh] md:h-auto p-12 md:p-6 */}
             <motion.div
               className="z-[40] grow-0 "
@@ -157,18 +170,19 @@ const HeroSection = () => {
                 delay: 1.5,
               }}
             >
-              <img src={img} alt="hero img " className="-m-10 md:-m-32" />
+              <img src={img} alt="hero img " className="heroimg" />
             </motion.div>
             <motion.p
-              className="text-[#FF5C00]  md:-mt-20 font-semibold self-end font-poppins z-[80]"
+              className="text-[#FF5C00]  md:-mt-20 font-semibold self-end font-poppins z-[80] flex"
               whileHover={{ scale: 1.25 }}
             >
-              Dibrugarh, Assam
+              <img src={loc} alt="" className="w-6 h-6" />
+              <span>Dibrugarh, Assam</span>
             </motion.p>
           </div>
 
-          <div className="md:hidden z-50 col-span-4">
-            <div className="flex flex-col  z-50 justify-center gap-2 pb-12 md:pb-2">
+          <div className=" z-50 col-span-4 hero-section-secondarycontainer">
+            <div className="flex flex-col  z-50 justify-center gap-[15px] pb-12 md:pb-2 hero-section-secondarycontainer-container">
               {textOne.map((el, i) => (
                 <motion.h5
                   initial={{ opacity: 0 }}
@@ -183,34 +197,37 @@ const HeroSection = () => {
                   {el}{" "}
                 </motion.h5>
               ))}
-              {textTwo.map((el, i) => (
-                <motion.h1
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{
-                    duration: 1.25,
-                    delay: (i + 1) / 2,
-                  }}
-                  className="text-[#FF5C00] font-bold uppercase text-3xl"
-                  key={i}
-                >
-                  {el}{" "}
-                </motion.h1>
-              ))}
-              {textThree.map((el, i) => (
-                <motion.h1
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{
-                    duration: 1.25,
-                    delay: (i + 2) / 2,
-                  }}
-                  className="text-[#000000]  font-bold uppercase text-3xl "
-                  key={i}
-                >
-                  {el}{" "}
-                </motion.h1>
-              ))}
+              <div className="flex hero-section-secondarycontainer-container-heading">
+                {textTwo.map((el, i) => (
+                  <motion.h1
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{
+                      duration: 1.25,
+                      delay: (i + 1) / 2,
+                    }}
+                    className="text-[#FF5C00] uppercase"
+                    key={i}
+                  >
+                    {el}{" "}
+                  </motion.h1>
+                ))}
+                {textThree.map((el, i) => (
+                  <motion.h1
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{
+                      duration: 1.25,
+                      delay: (i + 2) / 2,
+                    }}
+                    className="text-[#000000] uppercase"
+                    key={i}
+                  >
+                    {el}{" "}
+                  </motion.h1>
+                ))}
+              </div>
+
               {textFour.map((el, i) => (
                 <motion.h1
                   initial={{ opacity: 0 }}
@@ -219,15 +236,28 @@ const HeroSection = () => {
                     duration: 1.25,
                     delay: (i + 3) / 2,
                   }}
-                  className="text-sm font-roboto md:mt-4"
+                  className="md:mt-4 hero-section-secondarycontainer-container-heading-content"
                   key={i}
                 >
                   {el}{" "}
                 </motion.h1>
               ))}
-              <div className="flex  flex-col gap-3">
+              <div className="flex  gap-3">
                 <motion.button
-                  className="text-[#FF5C00] cursor-pointer font-semibold max-w-fit 
+                  // initial={{ opacity: 0 }}
+                  // animate={{ opacity: 1 }}
+                  // transition={{
+                  //   duration: 1.25,
+                  //   delay: 2 / 2,
+                  // }}
+                  className="text-[#fff] bg-[#FF5C00] cursor-pointer font-semibold max-w-fit py-2 px-4 
+            font-poppins border border-[#FF5C00] rounded-sm z-[80]"
+                  whileHover={{ scale: 1.1 }}
+                >
+                  Download CV
+                </motion.button>
+                <motion.button
+                  className="text-[#000] cursor-pointer font-semibold max-w-fit 
             py-2 px-4 font-poppins border border-[#FF5C00] rounded-sm"
                   // initial={{ opacity: 0 }}
                   // animate={{ opacity: 1 }}
@@ -237,26 +267,26 @@ const HeroSection = () => {
                   // }}
                   whileHover={{ scale: 1.25 }}
                 >
-                  Download CV
-                </motion.button>
-                <motion.button
-                  // initial={{ opacity: 0 }}
-                  // animate={{ opacity: 1 }}
-                  // transition={{
-                  //   duration: 1.25,
-                  //   delay: 2 / 2,
-                  // }}
-                  className="text-[#FF5C00] cursor-pointer font-semibold max-w-fit py-2 px-4 
-            font-poppins border border-[#FF5C00] rounded-sm z-[80]"
-                  whileHover={{ scale: 1.1 }}
-                >
-                  Contact Me
+                  <Link
+                    activeClass="active "
+                    to="Contact"
+                    spy={true}
+                    smooth={true}
+                    offset={50}
+                    duration={500}
+                    // onSetActive={handleSetActive}
+                  >
+                    {" "}
+                    Contact Me
+                  </Link>
                 </motion.button>
               </div>
             </div>
           </div>
         </div>
-        {/* <div className="grid grid-cols-3 bg-orange-100 mt-16 md:px-10 px-7 py-6 h-screen ">
+      </div>
+
+      {/* <div className="grid grid-cols-3 bg-orange-100 mt-16 md:px-10 px-7 py-6 h-screen ">
         <div className=" p-6 hidden md:flex flex-col ">
           <div className="justify-between md:flex flex-col h-[80%]">
             <p className="text-base">
@@ -289,7 +319,7 @@ const HeroSection = () => {
           ></div>
         </div>
       </div> */}
-      </Element>
+      {/* </Element> */}
     </>
   );
 };

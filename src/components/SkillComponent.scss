@@ -1,0 +1,47 @@
+@import '../index';
+
+ .skillcomponent{
+    // padding: 24px 160px 24px 160px;
+    @media only screen and (max-width: 600px){
+        width: 100%;
+        max-width: max-content;
+    }
+    @media only screen and (min-width: $breakpoint-md-min-w) and (max-width: $breakpoint-md-max-w){
+        max-width: 100%;
+        width: 100%;
+    }
+    @media only screen and (min-width: $breakpoint-md-min-w) and (max-width: $breakpoint-md-max-w){
+        @include set-flex(center,center ,column);
+        &-container{
+            justify-content: center;
+        }
+    } 
+    width: 545px;
+    // height: 171px;
+    flex-wrap: wrap;
+    max-width: 40%;
+gap: 24px;
+opacity: 0px;
+    &-title{
+
+@include set-font($font-family-poppins, 20px, 600, 25.6px, $card-header-color);
+    }
+    &-data{
+
+        @include set-flex(center,center ,row);
+// @include set-width-height(150px, 49.3px);
+gap: 5px;
+min-width: 132px;
+//max-width: 192px;
+height: 49.3px;
+padding: 12px 36px 12px 36px;
+border-radius: 36px;
+border: 2px solid $border-color;
+opacity: 0px;
+span{
+    
+@include set-font($font-family-poppins, 16px, 500, 20.48px, $card-header-color);
+}
+
+    }
+}

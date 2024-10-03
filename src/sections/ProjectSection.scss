@@ -1,0 +1,10 @@
+@import '../index';
+
+.projectsection{
+    background-color: $navbar-bgColor;
+    @media only screen and (min-width: 1400px){
+padding: 24px 160px 24px 160px;
+    }
+@include set-flex(center,center ,column);
+gap: 32px;
+}

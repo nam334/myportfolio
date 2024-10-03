@@ -14,10 +14,23 @@ const SocialIcons = () => {
         delay: 6 / 2,
       }}
     >
-      <motion.button whileHover={{ scale: 1.2 }}>
+      <motion.button
+        whileHover={{ scale: 1.2 }}
+        onClick={() =>
+          window.open(
+            "https://www.linkedin.com/in/namrata-das-915a51124/",
+            "__blank"
+          )
+        }
+      >
         <FaLinkedin className="text-orange-500 text-3xl" />
       </motion.button>
-      <motion.button whileHover={{ scale: 1.2 }}>
+      <motion.button
+        whileHover={{ scale: 1.2 }}
+        onClick={() => {
+          window.open("https://github.com/nam334", "__blank");
+        }}
+      >
         <FaGithub className="text-orange-500 text-3xl" />
       </motion.button>
     </motion.div>

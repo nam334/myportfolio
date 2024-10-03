@@ -1,0 +1,63 @@
+//buttons
+@mixin set-background($bg, $text-color){
+    background-color: $bg;
+    color: $text-color;
+}
+
+@mixin set-btn-dimension($width, $height, $px, $py){
+    width: $width;
+    height: $height;
+    padding: $px $py $px $py;
+}
+ 
+@mixin set-normalcard-dimension($width, $height, $px, $py, $bordersize, $bordercolor){
+width: $width;
+height: $height;
+padding: $px $py; 
+gap: 10px; 
+border-radius: 8px;
+border: $bordersize solid $bordercolor;
+opacity: 0px;
+}
+
+@mixin set-font($fontfamily, $fontsize, $fontweight, $lineheight, $fontcolor){
+font-family: $fontfamily;
+font-size: $fontsize;
+font-weight: $fontweight;
+line-height: $lineheight;
+color: $fontcolor;
+}
+
+
+//form elements
+@mixin set-textinput-dimension($width, $height, $borderRadius, $px,$py, $borderSize, $borderColor){
+    width: $width;
+    height: $height;
+    padding: $px $py $px $py;
+    border-radius: $borderRadius;
+    border: $borderSize solid $borderColor;
+}
+
+@mixin set-width-height($width, $height){
+    width: $width;
+    height: $height;
+}
+@mixin set-padding($top, $right, $bottom, $left){
+    padding: $top $right $bottom $left;
+}
+
+@mixin set-border($top, $right, $bottom, $left){
+    border: $top $right $bottom $left;
+}
+
+@mixin set-flex($justify-content, $align-items,  $flex-direction){
+    display: flex;
+    justify-content: $justify-content;
+    align-items: $align-items;
+    flex-direction: $flex-direction;
+}
+
+@mixin set-border-outline($border-color){
+    border: 1px solid $border-color;
+}
+

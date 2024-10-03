@@ -1,0 +1,54 @@
+$primary-color:#FF6E00;
+//$secondary-color:#FFF7F1;
+$secondary-variant:#FFF0DF;
+$secondary-color:#FFFFFF;
+
+//text colors
+$primary-text-color:#FFFFFF;
+$secondary-text-color:#000000;
+$card-header-color:#000000;
+$card-subheader-color:#585858;
+$modal-body-color: #4C4A4A;
+$bordered-checkbox-text-color:#1A202C; 
+$logo-text-color:#3F2709;
+$text-color:rgba(0, 0, 0, 0.85);
+$content-color:rgba(0, 0, 0, 0.58);
+//font-style 
+$font-family-poppins: "Poppins", sans-serif; 
+
+//notification
+$notification-error-text-color:#EE5151;
+//border-color
+$secondary-border-color:#FF6E00;
+$card-border-color:#B5B5B5;
+$modal-header-border:#CBD0DC;
+$bordered-checkbox-border-color:#CFD5DD;
+$accordian-border-color: #BEBEBE;
+$radiobutton-border-color:#CFD5DD;
+$hamburger-color:#1C1B1F;
+$border-color:#FFBE8C;
+//bg-color
+$stacked-card-bgColor: #FFF0DF;
+$table-header-bgColor:#FFF4EB;
+$accordian-bgColor:#f9f9f9;
+$navbar-bgColor: rgba(255, 247, 240, 0.96);
+//modal border radius
+$modal-border-radius:8px;
+
+//navigation 
+$sidenav-width: 250px;
+$tablet-width: 52vw;
+$mobile-width: 100vw;
+$backdrop-color: rgba(0, 0, 0, 0.5);
+
+
+// Breakpoints
+$breakpoint-sm-min-w: 320px;
+$breakpoint-sm-max-w: 600px;
+
+$breakpoint-md-min-w: 601px;
+$breakpoint-md-max-w: 1279px;
+
+$breakpoint-lg-min-w: 1280px;
+$breakpoint-lg-max-w: 1920px;
+ 

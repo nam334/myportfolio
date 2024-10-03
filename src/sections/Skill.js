@@ -8,7 +8,7 @@ import { Element } from "react-scroll";
 const Skill = () => {
   return (
     <>
-      <Element name="SKILLS" className="element">
+      <Element name="SKILLS" className="element bg-orange-50">
         <div className="flex flex-col justify-center items-center pt-8">
           <motion.h2
             className="font-medium text-5xl font-poppins py-8"

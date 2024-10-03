@@ -1,0 +1,191 @@
+@import '../index';
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $backdrop-color;
+  z-index: 999999;
+}
+// @media only screen and (min-width: $breakpoint-sm-min-w) and (max-width: $breakpoint-sm-max-w) {
+//   .backdrop {
+//   width: 100%;
+//   }
+// } 
+.navbar {
+  
+@include set-width-height(100%, 96px);
+// min-width: 1280px;
+max-width: 1920px;
+max-height: 96px;
+@media only screen and (max-width:  $breakpoint-md-max-w){
+  padding: 16px 24px;
+}
+padding: 16px 160px;
+gap: 15px;
+
+    
+    @include set-flex(space-between, center, row);
+   @media screen and (min-width:$breakpoint-lg-min-w){
+    @include  set-padding(16px, 160px, 16px, 160px);
+   } 
+    @include set-background($navbar-bgColor, $secondary-text-color);
+    &-logo {
+        z-index: 9999;
+        @include set-font($font-family-poppins, 2rem, 500, 24px, $logo-text-color);
+        img{
+          @media only screen and (max-width: 600px){
+            @include set-width-height(38px, 30px);
+          }
+          @media only screen and (min-width: 1400px){
+          @include set-width-height(201px, 45px);
+          }
+        }
+    }
+  
+    &-links {
+      list-style: none;
+      z-index: 9999999;
+      @include set-flex(flex-start, center, row);
+      @media (min-width: $breakpoint-lg-min-w) {
+        gap: 5rem;
+      }
+      @media only screen and (min-width: $breakpoint-md-min-w) and (max-width: $breakpoint-md-max-w) {
+        gap: 2rem;
+      }
+      &-hr{
+        width: 100%;
+        margin-bottom: 1.5rem;
+      }
+      @media (max-width: $breakpoint-sm-min-w) {
+        width: 100%;
+      }
+      @media only screen and (min-width: $breakpoint-md-min-w) and (max-width: $breakpoint-md-max-w) {
+        width: 60%;
+      }
+      @media (max-width: $breakpoint-md-max-w) {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100%;
+        margin: 0;
+        @include set-background($primary-text-color, $secondary-text-color);
+        @include set-flex(center ,center, column);
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        z-index: 1000;
+        &.active {
+          transform: translateX(0);
+          z-index: 9999999;
+        }
+      }
+      @media (max-width: $breakpoint-sm-max-w) {
+        width: 70%;
+      }
+      &-items{
+        @include set-flex(center, stretch, column);
+        height: 90vh; 
+        @media (max-width: $breakpoint-sm-max-w) {
+          margin-top: 0rem;
+        }
+        margin-top: -15rem;
+        &-list{
+          @include set-flex(space-evenly, flex-start, column);
+          height: 60%;
+          margin-left: -5rem;
+        }
+      }
+    }
+    &-item {
+      
+      span{
+        @media screen and (max-width: $breakpoint-sm-max-w) {
+          @include set-font($font-family-poppins, 24px, 500, 36px, #000);
+        }
+      
+      }
+@include set-font($font-family-poppins, 20px, 500, 128%, rgba(5, 5, 5, 0.90));
+      @media (max-width: 768px) {
+        margin-bottom: 20px;
+      } 
+      &:hover{
+        color: $primary-color;
+      }
+      &-icon{
+        @include set-width-height(20px, 20px);
+        margin-right: 1rem;
+      }
+    }
+  
+    &-link {
+  
+    @include set-font($font-family-poppins, 20px, 500, 128%, rgba(5, 5, 5, 0.90));
+    text-transform: uppercase;
+      text-decoration: none;
+      @media (max-width: $breakpoint-md-max-w) {
+        &-link {
+        @include set-font($font-family-poppins, 20px, 500, 24px, $secondary-text-color);
+        }
+      }
+      &:hover{
+        color: $primary-color;
+      }
+    }
+   
+    &-hamburger {
+
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      @media only screen and (max-width: 600px){
+        @include set-width-height(24px, 24px);
+      }
+      @media (max-width: $breakpoint-md-max-w) {
+        display: flex;
+        z-index: 999999;
+      }
+  
+      .hamburger-icon {
+       
+        @include set-width-height(24px, 2px);
+        background-color: $secondary-text-color;
+        margin: 0.15rem 0;
+        transition: 0.3s;
+      }
+    }
+  
+    &-close {
+      align-self: flex-end;
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: 20px;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: #fff;
+      @media (max-width: $breakpoint-md-max-w) {
+        @include set-font($font-family-poppins, 2rem, 500, 24px, $secondary-text-color);
+      }
+    }
+  
+    &-overlay {
+      // position: fixed;
+      // top: 0;
+      // left: 0;
+      // width: 100%;
+      // height: 100%;
+      // @include set-background($primary-text-color, $secondary-text-color);
+      // z-index: 500;
+      // display: block;
+    }  
+  }
+  .navbar-customdiv{
+    display: none;
+ }
+  @media (max-width: $breakpoint-md-max-w) {
+    .navbar-customdiv{
+        display: flex;
+    }
+}

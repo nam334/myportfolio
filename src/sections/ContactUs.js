@@ -3,6 +3,7 @@ import { FaLongArrowAltRight } from "react-icons/fa";
 import Wave from "react-wavify";
 import { motion } from "framer-motion";
 import { Element } from "react-scroll";
+import GenericHeading from "../components/GenericHeading";
 const ContactUs = () => {
   const userDetails = {
     username: "",
@@ -49,8 +50,11 @@ const ContactUs = () => {
   };
   return (
     <>
-      <Element name="CONTACT" className="element">
-        <div className="flex flex-col items-center justify-center pt-20  bg-orange-100 z-10">
+      <Element name="Contact" className="element">
+        <div
+          className="flex flex-col items-center justify-center bg-orange-100 z-10  pb-32
+        relative"
+        >
           <ul className="circle">
             <li></li>
             <li></li>
@@ -64,11 +68,15 @@ const ContactUs = () => {
             <li></li>
           </ul>
 
-          <motion.h2 className="font-medium text-4xl md:text-5xl font-poppins py-8 flex">
-            <motion.span whileHover={{ scale: 1.1 }}>
+          <motion.h2
+            className="font-medium text-2xl md:text-5xl font-poppins py-8 flex"
+            whileHover={{ scale: 1.1 }}
+          >
+            <GenericHeading title=" Send me a message!" />
+            {/* <motion.span whileHover={{ scale: 1.1 }}>
               {" "}
               Send me a message!
-            </motion.span>
+            </motion.span> */}
           </motion.h2>
 
           <form className="w-[65%] py-6 z-[80]">
@@ -89,7 +97,7 @@ const ContactUs = () => {
               />
               <label
                 for="floating_email"
-                class="peer-focus:font-medium absolute text-sm text-orange-500 
+                class="peer-focus:font-medium font-poppins absolute text-sm text-orange-500 
                 dark:text-orange-400 duration-300 transform -translate-y-6 scale-75 top-3 
                 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto 
                 peer-focus:text-orange-600 peer-focus:dark:text-orange-500 peer-placeholder-shown:scale-100 
@@ -106,7 +114,7 @@ const ContactUs = () => {
                     type="email"
                     name="floating_email"
                     id="floating_email"
-                    class="block py-2.5 px-0 w-full  bg-transparent border-0 text-gray-700 
+                    class="block py-2.5 px-0 w-full font-poppins bg-transparent border-0 text-gray-700 
                   border-b-2 border-orange-400 appearance-none dark:text-white
                    dark:border-gray-600
                   dark:focus:border-blue-500 focus:outline-none focus:ring-0 
@@ -118,7 +126,7 @@ const ContactUs = () => {
                   />
                   <label
                     for="floating_email"
-                    class="peer-focus:font-medium absolute text-sm text-orange-500 
+                    class="peer-focus:font-medium absolute text-sm text-orange-500 font-poppins
                 dark:text-orange-400 duration-300 transform -translate-y-6 scale-75 top-3 
                 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto 
                 peer-focus:text-orange-600 peer-focus:dark:text-orange-500 peer-placeholder-shown:scale-100 
@@ -134,7 +142,7 @@ const ContactUs = () => {
                     type="text"
                     name="floating_email"
                     id="floating_email"
-                    class="block py-2.5 px-0 w-full  bg-transparent border-0 text-gray-700 
+                    class="block py-2.5 px-0 w-full font-poppins bg-transparent border-0 text-gray-700 
                   border-b-2 border-orange-400 appearance-none dark:text-white
                    dark:border-gray-600
                   dark:focus:border-blue-500 focus:outline-none focus:ring-0 
@@ -146,7 +154,7 @@ const ContactUs = () => {
                   />
                   <label
                     for="floating_email"
-                    class="peer-focus:font-medium absolute text-sm text-orange-500 
+                    class="peer-focus:font-medium font-poppins absolute text-sm text-orange-500 
                 dark:text-orange-400 duration-300 transform -translate-y-6 scale-75 top-3 
                 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto 
                 peer-focus:text-orange-600 peer-focus:dark:text-orange-500 peer-placeholder-shown:scale-100 
@@ -163,7 +171,7 @@ const ContactUs = () => {
                   type="text"
                   name="floating_email"
                   id="floating_email"
-                  class="block py-2.5 px-0 w-full  bg-transparent border-0 text-gray-700 
+                  class="block py-2.5 px-0 w-full font-poppins bg-transparent border-0 text-gray-700 
                   border-b-2 border-orange-400 appearance-none dark:text-white
                    dark:border-gray-600
                   dark:focus:border-blue-500 focus:outline-none focus:ring-0 
@@ -174,7 +182,7 @@ const ContactUs = () => {
                 />
                 <label
                   for="floating_email"
-                  class="peer-focus:font-medium absolute text-sm text-orange-500 
+                  class="peer-focus:font-medium absolute text-sm text-orange-500 font-poppins
                 dark:text-orange-400 duration-300 transform -translate-y-6 scale-75 top-3 
                 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto 
                 peer-focus:text-orange-600 peer-focus:dark:text-orange-500 peer-placeholder-shown:scale-100 
@@ -186,7 +194,7 @@ const ContactUs = () => {
             </div>
             <button
               type="submit"
-              className="border-2 border-orange-500 text-orange-500 font-bold rounded-sm 
+              className="border-2 border-orange-500 text-orange-500 font-bold rounded-sm font-poppins
               px-16 py-2 my-4 hover:bg-orange-500 hover:text-orange-100"
             >
               <span className="flex items-center justify-center ga">
@@ -195,10 +203,16 @@ const ContactUs = () => {
               </span>
             </button>
           </form>
+
           <Wave
             fill="#F97316"
             paused={false}
-            style={{ display: "flex", zIndex: 99 }}
+            style={{
+              display: "flex",
+              zIndex: 99,
+              position: "absolute",
+              bottom: 0,
+            }}
             options={{
               height: 10,
               amplitude: 20,

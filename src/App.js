@@ -9,6 +9,9 @@ import Skill from "./sections/Skill";
 import Projects from "./sections/Projects";
 import Navbar from "./components/Navbar";
 import { Element } from "react-scroll";
+import SkillSection from "./sections/SkillSection";
+import ProjectSection from "./sections/ProjectSection";
+import Wave from "react-wavify";
 
 function App() {
   return (
@@ -19,9 +22,11 @@ function App() {
         hasBlendMode={true}
         innerStyle={{
           backgroundColor: "orange",
+          zIndex: "9999999999999999999999",
         }}
         outerStyle={{
           border: "3px solid orange",
+          zIndex: "9999999999999999999999",
         }}
         outerAlpha={0.2}
         innerScale={0.2}
@@ -40,26 +45,32 @@ function App() {
           ".link",
         ]}
       />
-      <div className="z-50">
-        <Navbar />
-      </div>
-      <HeroSection />
-
-      <Skill />
-
-      <Projects />
-      <Testimonials />
-      <ContactUs />
-
-      <ul className="circles z-10">
-        <li></li>
-        <li></li>
-        <li></li>
+      {/* <div className="z-50"> */}
+      <ul className="circles">
         <li></li>
         <li></li>
         <li></li>
         <li></li>
       </ul>
+      <Navbar />
+      {/* </div> */}
+      <HeroSection />
+      <SkillSection />
+      <ProjectSection />
+      <Testimonials />
+      <ContactUs />
+      {/* <Skill />
+    
+      <Projects />
+      <Testimonials />
+     */}
+      <ul className="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      {/* </div> */}
     </>
   );
 }

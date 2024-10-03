@@ -1,0 +1,5 @@
+@import '../index';
+.genericHeading{
+    @include set-font($font-family-poppins, 32px, 700, 40.96px, $card-header-color);
+    text-align: center;
+}

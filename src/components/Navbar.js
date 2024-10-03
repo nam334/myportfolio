@@ -1,8 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { IoClose } from "react-icons/io5";
-import Button from "./Button";
-import { motion } from "framer-motion";
+import { useState } from "react";
 import logo from "../assets/newlogo.svg";
 import {
   Link,
@@ -11,84 +7,122 @@ import {
   animateScroll as scroll,
   scrollSpy,
 } from "react-scroll";
+import "./Navbar.scss";
 
-const Navbar = () => {
-  const [open, setOpen] = useState(false);
-  let Links = [
-    { name: "HOME", link: "/" },
-    { name: "SKILLS", link: "/" },
-    { name: "TESTIMONIALS", link: "/" },
-    { name: "PROJECTS", link: "/" },
-    { name: "CONTACT", link: "/" },
+const Navbar = (props) => {
+  const {
+    brandlogo,
+
+    navbarCustomdivComponent,
+    ...rest
+  } = props;
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  let lin = [
+    { name: "Home", href: "#", icon: "@" },
+    { name: "Skills", href: "/#skills" },
+    { name: "Projects", href: "#" },
+    { name: "Testimonials", href: "#" },
+    { name: "Contact", href: "#" },
   ];
-
-  useEffect(() => {
-    console.log(open, "open");
-  }, [open]);
-
-  const changeHandler = () => {
-    console.log("click");
-    setOpen((prev) => !prev);
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
+
+  // Close the menu when a link is clicked
+  const closeMenuOnClick = () => {
+    if (window.innerWidth <= 600) {
+      // For mobile devices only
+      setIsMenuOpen(false);
+    }
+  };
+
   return (
-    // <div className="bg-orange-50 w-full fixed top-0 left-0 z-[99] shadow-sm">
-    <div className="bg-orange-100 w-full fixed md:relative top-0 left-0 z-[99] ">
-      <div
-        className="flex items-center  justify-between md:justify-around   bg-orange-100 
-    px-7"
-      >
-        <div
-          className=" text-xl cursor-pointer flex items-center font-bold
-      text-orange-500"
-        >
-          <motion.span
-            whileHover={{ scale: 1.5 }}
-            className="text-xl text-orange-500 mr-1 pt-2"
-          >
-            {/* <ion-icon name="logo-ionic"></ion-icon>
-             LOGO */}
-            <img src={logo} alt="logo" width="100" height="100" />
-          </motion.span>
-        </div>
+    <>
+      <Element name="Home" className="element">
+        <nav className="navbar">
+          {window.innerWidth < 600 && isMenuOpen ? null : (
+            <div className="navbar-logo">
+              <img src={logo} alt="Crazebazar" />
+            </div>
+          )}
 
-        <div
-          onClick={changeHandler}
-          role="presentation"
-          className=" text-xl absolute right-8 top-6 cursor-pointer md:hidden"
-        >
-          {open ? <IoClose /> : <GiHamburgerMenu />}
-        </div>
+          <ul className={`navbar-links ${isMenuOpen ? "active" : ""}`}>
+            <li className="navbar-close" onClick={toggleMenu}>
+              &times;
+            </li>
+            {isMenuOpen ? (
+              <div className="navbar-links-items">
+                <div className="navbar-logo">
+                  <img src={logo} alt="Crazebazar" />
+                </div>
+                <div className="navbar-links-items-list">
+                  {lin.map((link, index) => (
+                    <>
+                      {/* <li key={index} className="navbar-item">
+                      <NavLink
+                        to={link?.href}
+                        className="navbar-link"
+                        activeClassName="active-link"
+                      >
+                        {link.label}
+                      </NavLink>  */}
 
-        <ul
-          className={`md:flex md:items-center md:pb-0 pb-4 absolute md:static md:gap-6
-           bg-orange-100 md:bg-transparent md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 
-           transition-all duration-500 flex flex-col md:flex-row shadow-md md:shadow-none pt-6 md:pt-0
-            ease-in ${open ? "top-20 " : "top-[-490px]"}`}
-        >
-          {Links?.map((link) => (
-            // <li
-            //   key={link.name}
-            //   className="md:ml-8 text-lg font-medium md:my-0 my-7 gap-6
-            //   text-gray-800 hover:text-gray-400 duration-500
-            //   "
-            // >
-            <Link
-              activeClass="active "
-              className="md:ml-8 text-lg font-medium md:my-0 my-4 gap-6 
-      text-[#050505] hover:text-gray-400 duration-500 font-poppins"
-              to={link.name}
-              spy={true}
-              smooth={true}
-              offset={50}
-              duration={500}
-              // onSetActive={handleSetActive}
-            >
-              {link.name}
-            </Link>
-          ))}
-        </ul>
-      </div>
-    </div>
+                      <Link
+                        to={link?.name}
+                        smooth={true}
+                        offset={50}
+                        duration={500}
+                        className="navbar-link"
+                        onClick={closeMenuOnClick}
+                      >
+                        <li key={index} className="navbar-item">
+                          <span className="vendorsidenav-nav-list-nav-item-nav-text">
+                            {link.name}
+                          </span>
+                        </li>
+                      </Link>
+
+                      {/* </li> */}
+                    </>
+                  ))}
+                </div>
+              </div>
+            ) : null}
+            {!isMenuOpen
+              ? lin.map((link, index) => (
+                  <>
+                    <li key={index} className="navbar-item">
+                      <Link
+                        to={link?.name}
+                        smooth={true}
+                        offset={50}
+                        duration={500}
+                        className="navbar-link"
+                        activeClassName="active-link"
+                      >
+                        {link.name}
+                      </Link>
+                    </li>
+                  </>
+                ))
+              : null}
+          </ul>
+
+          {isMenuOpen && (
+            <div className="navbar-overlay" onClick={toggleMenu}></div>
+          )}
+          <div className="navbar-hamburger" onClick={toggleMenu}>
+            <span className="hamburger-icon"></span>
+            <span className="hamburger-icon"></span>
+            <span className="hamburger-icon"></span>
+          </div>
+        </nav>
+        {/* Backdrop when sidenav is open */}
+        {isMenuOpen && <div className="backdrop"></div>}
+      </Element>
+    </>
   );
 };
 

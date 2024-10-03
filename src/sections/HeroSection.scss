@@ -1,0 +1,115 @@
+@import '../index';
+.hero{
+@include set-flex(space-between, flex-start, column);
+background-color: $navbar-bgColor;
+// @include set-width-height(100%, 788px);
+@include set-width-height(100%, 100%);
+@media  screen and (max-width: 600px) {
+    padding: 24px 16px;
+}
+@media only screen and (min-width: 601px) and (max-width: 1020px) {
+    padding: 24px ;
+}
+padding: 24px 160px;
+position: relative;
+z-index: 9999;
+
+&-section{ 
+    &-location{
+        @media only screen and (min-width: $breakpoint-sm-min-w) and (max-width: 900px) {
+            margin-bottom: 3rem;
+        }
+        @media only screen and (min-width: 901px) and (max-width: $breakpoint-md-max-w) {
+            margin-bottom: 5rem;
+        }
+    }
+    @include set-flex(space-between, center,row);
+    @media  screen and (min-width: 601px) {
+    @include set-width-height(100%, 643px);
+    }
+    @media  screen and (max-width: 1400px) {
+        @include set-width-height(100%, 100%);
+    }
+    @media only screen and (min-width: $breakpoint-sm-min-w) and (max-width: 1279px) {
+        @include set-flex(center,center ,column);
+    }
+    &-secondarycontainer{
+        @media only screen and (max-width: $breakpoint-lg-min-w)  {
+            display: none;
+        }
+        @media only screen and (min-width: $breakpoint-lg-min-w)  {
+            display: none;
+        }
+        @media only screen and (max-width: 600px){
+            @include set-width-height(305px, 298px);
+        }
+        
+        @media only screen and (min-width: $breakpoint-sm-min-w) and (max-width: 900px){
+            @include set-width-height(100%, 236px);
+        }
+        @media only screen and (min-width: $breakpoint-sm-min-w) and (max-width: 1279px) {
+            @include set-flex(center,center ,column);
+            // @include set-width-height(544px, 236px);
+            @include set-width-height(100%, 100%);
+            &-container{
+                @include set-flex(center,center ,column);
+                gap: 2rem;
+                &-heading{
+                    @media only screen and (max-width: 600px){
+                        @include set-font($font-family-poppins, 32px, 700, 44.16%, $text-color);
+                    }
+                    @include set-font($font-family-poppins, 48px, 700, 44.16%, $text-color);
+                    gap: 5px;
+                    &-content{
+                        @media only screen and (max-width: 600px){
+                            @include set-font($font-family-poppins, 12px,  400, 16.7px, $text-color);
+                        }
+                        @include set-font($font-family-poppins, 16px, 400, 22.27px, $text-color);
+                       
+                       }
+                }
+             }
+        } 
+    }
+    .heroimg
+    {
+        @media only screen and (min-width: $breakpoint-sm-min-w) and (max-width: $breakpoint-md-max-w) {
+            // margin-left: -5rem;
+        }
+        @media only screen and (min-width: $breakpoint-sm-min-w) and (max-width:  1400px) {
+            margin-right: 5rem;
+            width: 800px;
+        }
+        @media only screen and (min-width: 601px) and (max-width: 1300px)  {
+            margin-top: -5rem;
+        }
+        @media only screen and (min-width: 601px) and (max-width: 1300px)  {
+        // height: 800px;
+    // margin-top: -10rem;
+    width: 566px;
+    height: 590px;
+        }
+    }
+&-container{
+    @media only screen and (min-width: $breakpoint-sm-min-w) and (max-width: 1279px) {
+     display: none;   
+    }
+    @include set-flex(space-between,stretch ,column);
+    gap: 24px;
+    &-heading{
+        @include set-font($font-family-poppins, 20px, 600, 128%, $text-color);
+       
+    letter-spacing: 1.2px;
+    }
+    &-subheading{
+        @include set-font($font-family-poppins, 45px, 600, 92%, black);
+    
+    }
+    &-content{
+        @include set-width-height(544px, 100%);
+        @include set-font($font-family-poppins, 16px, 400, 139.188%, $content-color);
+    }
+}
+
+}
+}
