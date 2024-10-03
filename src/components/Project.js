@@ -1,5 +1,7 @@
 import React from "react";
 import "./Project.scss";
+import { motion } from "framer-motion";
+
 const Project = ({ data }) => {
   const clickHandler = (data) => {
     if (data?.name === "Tic Tac Toe")
@@ -12,10 +14,27 @@ const Project = ({ data }) => {
       window.open("https://mywalkthroughapp.netlify.app/", "__blank");
     // if (data?.name === "Doodle Desk") window.open("", "__blank");
   };
-
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50, scale: 0.8 }, // Cards start off-screen and smaller
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        type: "spring", // Adding a bounce
+        stiffness: 100,
+        damping: 10,
+        duration: 0.5,
+      },
+    },
+  };
   return (
     <>
-      <div className="projectcontainer" name="Projects">
+      <motion.div
+        variants={cardVariants}
+        className="projectcontainer"
+        name="Projects"
+      >
         <img src={data?.img} alt="project title" />
         <div className="flex justify-between w-full items-center">
           <p className="projectcontainer-title">{data.name}</p>
@@ -26,7 +45,7 @@ const Project = ({ data }) => {
             View
           </button>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };

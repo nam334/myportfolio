@@ -103,7 +103,7 @@ z-index: 9999;
     }
     &-subheading{
         @include set-font($font-family-poppins, 45px, 600, 92%, black);
-    
+        z-index: 999999999999999;
     }
     &-content{
         @include set-width-height(544px, 100%);

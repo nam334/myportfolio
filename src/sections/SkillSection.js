@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import GenericHeading from "../components/GenericHeading";
 import SkillComponent from "../components/SkillComponent";
 import {

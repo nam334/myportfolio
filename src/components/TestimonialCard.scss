@@ -22,8 +22,8 @@ img{
     // margin-bottom: 5rem;
 }
 gap: 87px;
-border-radius: 30px;
-opacity: 0px;
+border-radius: 30px; 
+// opacity: 0px;
 @media only screen and (min-width: $breakpoint-md-min-w) and (max-width: 1100px) {
  flex-direction: column;
  height: 100%;

@@ -21,7 +21,7 @@
     flex-wrap: wrap;
     max-width: 40%;
 gap: 24px;
-opacity: 0px;
+// opacity: 0px; 
     &-title{
 
 @include set-font($font-family-poppins, 20px, 600, 25.6px, $card-header-color);
@@ -37,7 +37,7 @@ height: 49.3px;
 padding: 12px 36px 12px 36px;
 border-radius: 36px;
 border: 2px solid $border-color;
-opacity: 0px;
+// opacity: 0px;
 span{
     
 @include set-font($font-family-poppins, 16px, 500, 20.48px, $card-header-color);

@@ -46,12 +46,12 @@ function App() {
         ]}
       />
       {/* <div className="z-50"> */}
-      <ul className="circles">
+      {/* <ul className="circles">
         <li></li>
         <li></li>
         <li></li>
         <li></li>
-      </ul>
+      </ul> */}
       <Navbar />
       {/* </div> */}
       <HeroSection />
@@ -64,12 +64,12 @@ function App() {
       <Projects />
       <Testimonials />
      */}
-      <ul className="circles">
+      {/* <ul className="circles">
         <li></li>
         <li></li>
         <li></li>
         <li></li>
-      </ul>
+      </ul> */}
       {/* </div> */}
     </>
   );

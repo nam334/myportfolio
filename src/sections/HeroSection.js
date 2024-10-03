@@ -15,9 +15,24 @@ const HeroSection = () => {
   ];
   const textTwo = ["NAMRATA"];
   const textThree = ["DAS"];
-  const textFour = [
-    " Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-  ];
+  const textFour =
+    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.";
+
+  const sentence = {
+    hidden: { opacity: 1 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delay: 0.5,
+        staggerChildren: 0.04, // Delay between letters
+      },
+    },
+  };
+
+  const letter = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0 },
+  };
   return (
     <>
       {/* <Element name="HOME" className="element"> */}
@@ -48,15 +63,22 @@ const HeroSection = () => {
             <div className="hero-section-container-subheading">
               {textTwo.map((el, i) => (
                 <motion.h1
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
+                  initial={{ opacity: 0 }} // Start with full transparency
+                  animate={{ opacity: 1 }} // Gradually increase opacity to fully visible
+                  // initial={{ opacity: 0 }}
+                  // animate={{ opacity: 1 }}
                   transition={{
                     duration: 1.25,
                     delay: (i + 1) / 2,
+                    type: "spring",
+                    stiffness: 300,
                   }}
+                  whileHover={{ y: -10 }} // Bounces the button upward slightly on hover
+                  whileTap={{ scale: 0.95 }}
+                  // transition={{ type: "spring", stiffness: 300 }}
                   className="text-[#FF5C00]"
                   key={i}
-                  whileHover={{ scale: 1.1 }}
+                  //whileHover={{ scale: 1.1 }}
                 >
                   {el}{" "}
                 </motion.h1>
@@ -68,9 +90,14 @@ const HeroSection = () => {
                   transition={{
                     duration: 1.25,
                     delay: (i + 2) / 2,
+                    type: "spring",
+                    stiffness: 300,
                   }}
                   className="text-[#000000]"
-                  whileHover={{ scale: 1.1 }}
+                  // whileHover={{ scale: 1.2 }}
+                  whileHover={{ y: -10 }} // Bounces the button upward slightly on hover
+                  whileTap={{ scale: 0.95 }}
+                  // transition={{ type: "spring", stiffness: 300 }}
                   key={i}
                 >
                   {el}{" "}
@@ -78,7 +105,7 @@ const HeroSection = () => {
               ))}
             </div>
             <div className="hero-section-container-content">
-              {textFour.map((el, i) => (
+              {/* {textFour.map((el, i) => (
                 <motion.h1
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -91,19 +118,33 @@ const HeroSection = () => {
                 >
                   {el}{" "}
                 </motion.h1>
-              ))}
+              ))} */}
+
+              <motion.h1 variants={sentence} initial="hidden" animate="visible">
+                {textFour.split("").map((char, index) => (
+                  <motion.span key={index} variants={letter}>
+                    {char}
+                  </motion.span>
+                ))}
+              </motion.h1>
             </div>
             <div className="flex  gap-3 ">
               <motion.button
-                // initial={{ opacity: 0 }}
-                // animate={{ opacity: 1 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 // transition={{
                 //   duration: 1.25,
                 //   delay: 2 / 2,
                 // }}
                 className="text-white bg-[#FF5C00] cursor-pointer font-semibold max-w-fit py-2 px-4 
-            font-poppins border border-[#FF5C00] rounded-sm z-[80]"
-                whileHover={{ scale: 1.1 }}
+            font-poppins border border-[#FF5C00] rounded-sm "
+                // whileHover={{ scale: 1.1 }}
+                // whileHover={{ scale: 1.1 }} // Scale up on hover
+                // whileTap={{ scale: 0.9 }} // Scale down slightly on click
+                // transition={{ type: "spring", stiffness: 300, damping: 20 }} // Smooth scaling effect
+                whileHover={{ scale: 1.05 }} // Slight hover effect
+                whileTap={{ scale: 0.6 }} // Shrinks then scales back on click
+                transition={{ type: "spring", stiffness: 300 }}
               >
                 {/* <Link
                   activeClass="active "
@@ -119,15 +160,21 @@ const HeroSection = () => {
                 {/* </Link> */}
               </motion.button>
               <motion.button
-                // initial={{ opacity: 0 }}
-                // animate={{ opacity: 1 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 // transition={{
                 //   duration: 1.25,
                 //   delay: 2 / 2,
                 // }}
                 className="text-[#FF5C00] cursor-pointer font-semibold max-w-fit py-2 px-4 
             font-poppins border border-[#FF5C00] rounded-sm z-[80]"
-                whileHover={{ scale: 1.1 }}
+                // whileHover={{ scale: 1.1 }} // Scale up on hover
+                // whileTap={{ scale: 0.9 }} // Scale down slightly on click
+                // transition={{ type: "spring", stiffness: 300, damping: 20 }} // Smooth scaling effect
+
+                whileHover={{ scale: 1.05 }} // Slight hover effect
+                whileTap={{ scale: 0.6 }} // Shrinks then scales back on click
+                transition={{ type: "spring", stiffness: 300 }}
               >
                 <Link
                   activeClass="active "
@@ -170,7 +217,13 @@ const HeroSection = () => {
                 delay: 1.5,
               }}
             >
-              <img src={img} alt="hero img " className="heroimg" />
+              <motion.img
+                src={img}
+                alt="hero img "
+                className="heroimg"
+                whileHover={{ scale: 1.1 }} // Slightly increase size on hover
+                transition={{ type: "spring", stiffness: 300 }}
+              />
             </motion.div>
             <motion.p
               className="text-[#FF5C00]  md:-mt-20 font-semibold self-end font-poppins z-[80] flex"
@@ -228,7 +281,7 @@ const HeroSection = () => {
                 ))}
               </div>
 
-              {textFour.map((el, i) => (
+              {textFour.split("").map((el, i) => (
                 <motion.h1
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -244,28 +297,32 @@ const HeroSection = () => {
               ))}
               <div className="flex  gap-3">
                 <motion.button
-                  // initial={{ opacity: 0 }}
-                  // animate={{ opacity: 1 }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
                   // transition={{
                   //   duration: 1.25,
                   //   delay: 2 / 2,
                   // }}
                   className="text-[#fff] bg-[#FF5C00] cursor-pointer font-semibold max-w-fit py-2 px-4 
             font-poppins border border-[#FF5C00] rounded-sm z-[80]"
-                  whileHover={{ scale: 1.1 }}
+                  whileHover={{ scale: 1.1 }} // Scale up on hover
+                  whileTap={{ scale: 0.9 }} // Scale down slightly on click
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }} // Smooth scaling effect
                 >
                   Download CV
                 </motion.button>
                 <motion.button
                   className="text-[#000] cursor-pointer font-semibold max-w-fit 
             py-2 px-4 font-poppins border border-[#FF5C00] rounded-sm"
-                  // initial={{ opacity: 0 }}
-                  // animate={{ opacity: 1 }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
                   // transition={{
                   //   duration: 1.25,
                   //   delay: 4 / 2,
                   // }}
-                  whileHover={{ scale: 1.25 }}
+                  whileHover={{ scale: 1.1 }} // Scale up on hover
+                  whileTap={{ scale: 0.9 }} // Scale down slightly on click
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }} // Smooth scaling effect
                 >
                   <Link
                     activeClass="active "

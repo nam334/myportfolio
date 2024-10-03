@@ -49,9 +49,12 @@ const Navbar = (props) => {
           )}
 
           <ul className={`navbar-links ${isMenuOpen ? "active" : ""}`}>
-            <li className="navbar-close" onClick={toggleMenu}>
-              &times;
-            </li>
+            {window.innerWidth < 1280 ? (
+              <li className="navbar-close" onClick={toggleMenu}>
+                &times;
+              </li>
+            ) : null}
+
             {isMenuOpen ? (
               <div className="navbar-links-items">
                 <div className="navbar-logo">

@@ -15,7 +15,10 @@ const SocialIcons = () => {
       }}
     >
       <motion.button
-        whileHover={{ scale: 1.2 }}
+        // whileHover={{ scale: 1.2 }}
+        whileHover={{ y: -10 }} // Bounces the button upward slightly on hover
+        whileTap={{ scale: 0.95 }}
+        transition={{ type: "spring", stiffness: 300 }}
         onClick={() =>
           window.open(
             "https://www.linkedin.com/in/namrata-das-915a51124/",
@@ -26,7 +29,10 @@ const SocialIcons = () => {
         <FaLinkedin className="text-orange-500 text-3xl" />
       </motion.button>
       <motion.button
-        whileHover={{ scale: 1.2 }}
+        // whileHover={{ scale: 1.2 }}
+        whileHover={{ y: -10 }} // Bounces the button upward slightly on hover
+        whileTap={{ scale: 0.95 }}
+        transition={{ type: "spring", stiffness: 300 }}
         onClick={() => {
           window.open("https://github.com/nam334", "__blank");
         }}
