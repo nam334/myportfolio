@@ -2,7 +2,8 @@
 .testimonialelement{
     &-slider{
         @media only screen and (max-width: $breakpoint-sm-max-w) {
-            height: 60vh;
+            // height: 60vh;
+            
         }
         @media only screen and (min-width: $breakpoint-md-min-w) and (max-width: 1100px) {
             height: 90vh;

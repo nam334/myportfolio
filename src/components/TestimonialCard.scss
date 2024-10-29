@@ -5,11 +5,14 @@ background-color: $navbar-bgColor;
 @include set-flex(center,center ,row);
 padding: 0px 48px 0px 0px;
 @media only screen and (max-width: $breakpoint-sm-max-w) {
+    padding: 8rem 2rem;
     z-index: 999999;
-    position: relative;
-    padding: 38px 40px;
+    // position: relative;
+    // padding: 38px 40px;
     @include set-width-height(302px, 100%);
     border-radius: 10px;
+    // margin-bottom: 4rem;
+    // margin-top: 2rem;
 img{
     display: none;
  }
@@ -42,6 +45,7 @@ width: 374px;
 gap: 31px;
 @media only screen and (max-width: $breakpoint-sm-max-w) {
     width: 100%;
+    gap: 10px;
 }
 @media only screen and (min-width: $breakpoint-md-min-w) and (max-width: 1100px) {
     @include set-flex(center, center,column);
@@ -62,6 +66,9 @@ text-align: left;
 }
 &-name{
 @include set-font($font-family-poppins, 24px, 700, 30.72px, $card-header-color);
+@media only screen and (max-width: $breakpoint-sm-max-w) {
+    @include set-font($font-family-poppins, 14px, 700, 30.72px, $card-header-color);
+}
 text-align: left;
 }
 &-designation{

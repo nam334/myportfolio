@@ -17,6 +17,7 @@ const ContactUs = () => {
   useEffect(() => {
     console.log(userDetail);
   }, [userDetail]);
+
   const detailsHandler = (e, id) => {
     if (id.includes("username")) {
       setUserDetail((prev) => {
@@ -48,6 +49,9 @@ const ContactUs = () => {
       });
     }
   };
+
+  //dummy data
+
   return (
     <>
       <Element name="Contact" className="element">
@@ -69,14 +73,10 @@ const ContactUs = () => {
           </ul>
 
           <motion.h2
-            className="font-medium text-2xl md:text-5xl font-poppins py-8 flex"
+            className="font-medium text-2xl md:text-5xl font-poppins py-8 flex "
             whileHover={{ scale: 1.1 }}
           >
             <GenericHeading title=" Send me a message!" />
-            {/* <motion.span whileHover={{ scale: 1.1 }}>
-              {" "}
-              Send me a message!
-            </motion.span> */}
           </motion.h2>
 
           <form className="w-[65%] py-6 z-[80]">
@@ -84,7 +84,7 @@ const ContactUs = () => {
               <input
                 type="text"
                 name="floating_email"
-                id="floating_email"
+                // id="floating_email"
                 class="block py-2.5 px-0 w-full  bg-transparent border-0 text-gray-700 
                   border-b-2 border-orange-400 appearance-none dark:text-white
                    dark:border-gray-600
@@ -94,9 +94,10 @@ const ContactUs = () => {
                 value={userDetail?.username}
                 placeholder=""
                 required
+                id="YOUR NAME"
               />
               <label
-                for="floating_email"
+                htmlFor="YOUR NAME"
                 class="peer-focus:font-medium font-poppins absolute text-sm text-orange-500 
                 dark:text-orange-400 duration-300 transform -translate-y-6 scale-75 top-3 
                 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto 

@@ -55,8 +55,8 @@ function App() {
       <Navbar />
       {/* </div> */}
       <HeroSection />
-      <SkillSection />
       <ProjectSection />
+      <SkillSection />
       <Testimonials />
       <ContactUs />
       {/* <Skill />

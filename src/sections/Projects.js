@@ -10,7 +10,7 @@ const Projects = () => {
   return (
     <>
       <Element name="PROJECTS" className="element bg-orange-50">
-        <div className="flex flex-col justify-center items-center pt-4 md:pt-16">
+        <div className="flex flex-col justify-center items-center pt-4 ">
           <motion.h2
             className="font-medium text-5xl font-poppins py-8"
             whileHover={{ scale: 1.25 }}

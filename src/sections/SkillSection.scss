@@ -1,12 +1,25 @@
 @import '../index';
 .skillsection{
-background-color: $navbar-bgColor;
+  // height: 5rem;
+  // margin-bottom: 1rem;
+  // background-image: url('../assets/skillsBg.svg');  // Path relative to the SCSS file
+  // background-position: center;
+  // background-size: 100% 100%;
+  // background-repeat: no-repeat;
+  // background-blend-mode: color-burn;
+
+// background-color: $navbar-bgColor;
+background-color: bisque;
 padding: 24px 160px 24px 160px;
+// @media only screen and (min-width:  $breakpoint-md-min-w){
+// padding-bottom: 5rem;
+// }
 @media only screen and (max-width: 600px){
-    @include set-padding(28px,28px,28px,28px);
+    // @include set-padding(28px,28px,28px,28px);
+    padding: 60px 28px;
   }
   @media only screen and (min-width: $breakpoint-md-min-w) and (max-width: $breakpoint-md-max-w){
-    @include set-padding(20px,20px,20px,20px);
+    @include set-padding(20px,20px,60px,20px);
   }
 gap: 48px;
 @include set-flex(center,center ,column);

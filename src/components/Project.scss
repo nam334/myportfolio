@@ -2,20 +2,21 @@
 .projectcontainer{
     @include set-width-height(353px, 414px);
     @include set-flex(center,center ,column);
-    gap: 16px;
+   
     flex-wrap: wrap;
     &-title{
         @include set-font($font-family-poppins, 16px, 500, 24px, $card-header-color);
     }
     &-viewbtn{
-        @include set-width-height(68px, 40px);
+        @include set-width-height(100%, 46px);
         @include set-flex(center,center ,row);
-        @include set-font($font-family-poppins, 14px, 400, 21px, $card-header-color);
-       border: 1.5px solid $card-header-color;
+        @include set-font($font-family-poppins, 14px, 600, 21px, $card-header-color);
+       border: none;
+       box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
        background-color: $secondary-color;
-padding: 12px;
-gap: 10px;
-border-radius: 5px;
+padding: 16px 24px;
+border-radius: 50px;
+margin-top: -1rem;
 // opacity: 0px;
 
     }

@@ -37,12 +37,13 @@ const Project = ({ data }) => {
       >
         <img src={data?.img} alt="project title" />
         <div className="flex justify-between w-full items-center">
-          <p className="projectcontainer-title">{data.name}</p>
+          {/* <p className="projectcontainer-title">{data.name}</p> */}
           <button
-            className="projectcontainer-viewbtn cursor-pointer hover:font-semibold hover:bg-orange-200"
+            className="projectcontainer-viewbtn cursor-pointer
+             "
             onClick={() => clickHandler(data)}
           >
-            View
+            {data.name}
           </button>
         </div>
       </motion.div>

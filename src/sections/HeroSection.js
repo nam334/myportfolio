@@ -221,8 +221,10 @@ const HeroSection = () => {
                 src={img}
                 alt="hero img "
                 className="heroimg"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 whileHover={{ scale: 1.1 }} // Slightly increase size on hover
-                transition={{ type: "spring", stiffness: 300 }}
+                transition={{ type: "spring", stiffness: 300, duration: 1.25 }}
               />
             </motion.div>
             <motion.p
@@ -281,7 +283,20 @@ const HeroSection = () => {
                 ))}
               </div>
 
-              {textFour.split("").map((el, i) => (
+              <motion.h1
+                variants={sentence}
+                initial="hidden"
+                animate="visible"
+                className="md:mt-4 hero-section-secondarycontainer-container-heading-content"
+              >
+                {textFour.split("").map((char, index) => (
+                  <motion.span key={index} variants={letter}>
+                    {char}
+                  </motion.span>
+                ))}
+              </motion.h1>
+
+              {/* {textFour.split("").map((el, i) => (
                 <motion.h1
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -294,7 +309,7 @@ const HeroSection = () => {
                 >
                   {el}{" "}
                 </motion.h1>
-              ))}
+              ))} */}
               <div className="flex  gap-3">
                 <motion.button
                   initial={{ opacity: 0 }}
